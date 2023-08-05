@@ -1,10 +1,7 @@
-html
-{
-    
-}
+
 body {
     margin: 0;
-    background: radial-gradient( #292660 0%, #2a2c41 100%);
+    background: radial-gradient( #0f0d3b 0%, #2a2c41 100%);
     background-repeat: no-repeat;
     min-height: 100vh;
 }
@@ -17,19 +14,20 @@ body {
     display: flex;
     flex-direction: column;
     margin-top: 50px;
-    justify-content: center;
+    justify-content: start;
     background:  radial-gradient(circle at 5% 80% , #4c287e9e  10%, transparent 30%),radial-gradient(circle at 95% 90% , #3e2168bd  0%, transparent 10%),linear-gradient(to bottom, #272459 50%,#201c47 100%);
     border-radius: 20px;
     padding-top: 20px;
-    min-height: 300px;
+    min-height: 600px;
+    align-items: center;
     
 }
 
 
 .title {
     display: inline-block; 
-    font-size: 1rem;
-    font-family: sans-serif, Helvetica, sans-serif;
+    font-size: 2rem;
+    font-family: 'inter', sans-serif;
     font-weight: 800;
    color: white;
   
@@ -43,32 +41,36 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 10px;
 }
 .search-box
 {
     display: flex;
     gap: 10px;
-    background-color: transparent;
     background: linear-gradient(to left,#27225b 0%,#20184d 50%);
-    padding-left: 9px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-right: 9px;
-    align-items: center;
+  
+    padding-left: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 18px;
+
+  
     border-radius: 10px;
-    box-shadow: inset 0px 2px 4px 0px rgba(0, 0, 0,.25);
+    box-shadow: inset 0px 2px 4px 3px rgba(0, 0, 0,.25);
+    align-items: center;
 }
 .search-icon
 {
    filter: grayscale(100%);
 }
+
 .icon
 {
-    font-size: 12px;
+    color:rgb(161, 173, 188);
     opacity: 0.6;
+    font-size: 25px;
 }
 
 .search
@@ -76,29 +78,31 @@ body {
     font-family: 'sans-serif',Arial, Helvetica, sans-serif;
    background-color: transparent;
     border: none;
-    width: 180px;
-    color: white;
-    font-size: 12px;
+    width: 300px;
+    color: rgb(202, 196, 196);
+    font-size: 22px;
     font-weight: 100;
-    outline-style: none;
+    outline-style:none;
     border: none;
+    font-family: 'sans-serif',Arial, Helvetica, sans-serif;
 }
 .search::placeholder
 {
     color: #EBEBF5;
     opacity: 60%;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: 100;
     font-family: 'sans-serif',Arial, Helvetica, sans-serif;
     
     
 }
+
 .add-city
 {
     color: white;
-    font-size: 10px;
-    font-weight: 800;
-    background-color: #4A397F;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #403172;
     border: none;
     padding-inline: 25px;
     padding-block: 10px;
@@ -106,38 +110,44 @@ body {
     width: fit-content;
     border-radius: 5px;
     transition: background-color 0.3s;
-    font-family: 'sans-serif',Arial, Helvetica, sans-serif;
+    margin-inline: auto;
 }
 .add-city:hover
 {
-    background-color: #34275a;
+    background-color: #5f4f8f;
 }
-
 .dashboard
 {
-    
-   padding-inline: 20px;
-   padding-top: 30px;
-   gap: 5px;
-   width: 90%;
-   margin: auto;
+    display: flex;
+   padding-inline: 40px;
+   padding-top: 40px;
+   gap: 15px;
    justify-content: center;
    flex-wrap: wrap;
- 
+   
+
+   padding-bottom: 100px;
+   margin-bottom: 100px;
 }
 .card
 {
-    
+    position: relative;
     width: max-content;
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
     cursor: pointer;
+}
+.card:hover
+{
+    opacity: 0.7;
 }
 .card-image
 {
-    width: 200px;
-    height: 120px;
+    width: 300px;
+    height: 150px;
     
     
-    
+    position: relative;
     
    
 }
@@ -145,8 +155,10 @@ body {
 {
     width: 100%;
     position: absolute;
-    
-   
+    top: 0;
+    left: 0;
+    padding-inline: 10px;
+   height: 100%;
    margin: auto;
 }
 .card-top
@@ -166,22 +178,21 @@ body {
     width: 50%;
        
     justify-content: end;
-    padding: 0px;
+    padding: 10px;
    
 }
 .temperature
 {
-  
-    font-size:1.4rem;
+    font-family: sans-serif,Arial, Helvetica, sans-serif;
+    font-size:2rem;
     
 }
 .humidity
 {
-    font-family: sans-serif,Arial, Helvetica, sans-serif;
     display: flex;
-    color: rgba(255, 252, 252, 0.778);
-    font-size: 0.5rem;
-    font-weight: 100;
+    color: rgba(237, 229, 229, 0.774);
+    font-size: 0.8rem;
+    font-weight: 200;
     align-items: end;
 }
 .card-right
@@ -189,42 +200,37 @@ body {
     display: flex;
     width: 50%;
     align-items: center;
-    padding-right: 5px;
+    padding-right: 15px;
     padding-top: 0px;
     
 }
 .card-right>img
 {
-    height: 75px;
+    height: 130px;
 }
 .card-bottom
 {
     height: 30%;
     width: 90%;
     display: flex;
-    
     justify-content: space-between;
     align-items: start;
-    padding-left: 0px;
-    
+    padding-inline: 10px;
     
 }
 .location
 {
-
     font-family: sans-serif,Arial, Helvetica, sans-serif;
-    font-size: 8px;
+    font-size: 15px;
     font-weight: 300;
-    color: rgb(207, 212, 216);
+   color: rgb(202, 212, 222);
+   opacity: 0.8;
 }
 .weather-style>span
 {
     font-family: sans-serif,Arial, Helvetica, sans-serif;
-   display: flex;
-    font-size:11px ;
+    font-size:15px ;
    font-weight: 200;
    color: rgb(255, 255, 255);
-   align-items: start;
-   
 
 }

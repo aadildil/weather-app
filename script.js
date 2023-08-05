@@ -389,10 +389,10 @@ function addCard(cities)
         <div class="card-top">
             <div class="card-left">
                 <div class="temperature" title="Current Temperature">
-                    <span>${item["temperature"]}°</span>
+                    <span  aria-label="temperature of city">${item["temperature"]}°</span>
                 </div>
                 <div class="humidity" title="Humidity and Lowest Temperature">
-                   <span> H:${item["humidity"]}°  L:${item["low"]}°</span>
+                   <span  aria-label="humidty and lowest temperature of city"> H:${item["humidity"]}°  L:${item["low"]}°</span>
                 </div>
             </div>
             <div class="card-right">
@@ -400,8 +400,8 @@ function addCard(cities)
             </div>
         </div>
         <div class="card-bottom">
-            <div class="location"><span>${item["cityName"]}, ${item["country"]}</span></div>
-            <div class="weather-style" title="weather condition"><span>${item["description"]}</span></div>
+            <div class="location"  aria-label="location"><span>${item["cityName"]}, ${item["country"]}</span></div>
+            <div class="weather-style" aria-label="weather condition" title="weather condition"><span>${item["description"]}</span></div>
         </div>
     </div>`;
        container.appendChild(card);
@@ -411,6 +411,13 @@ function addCard(cities)
 }
 
 searchButton.addEventListener("click", addCity);
+searchField.addEventListener("keydown",(event)=>{
+    
+    if(event.key==="Enter")
+    {
+        addCity();
+    }
+})
 
 
 
